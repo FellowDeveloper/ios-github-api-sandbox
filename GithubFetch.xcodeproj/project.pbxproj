@@ -16,6 +16,10 @@
 		3AF5DBED29DB6C180035919F /* GithubFetchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF5DBEC29DB6C180035919F /* GithubFetchTests.swift */; };
 		3AF5DBF729DB6C180035919F /* GithubFetchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF5DBF629DB6C180035919F /* GithubFetchUITests.swift */; };
 		3AF5DBF929DB6C180035919F /* GithubFetchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF5DBF829DB6C180035919F /* GithubFetchUITestsLaunchTests.swift */; };
+		3AF5DC0629DB73410035919F /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF5DC0529DB73410035919F /* DataFetcher.swift */; };
+		3AF5DC0829DCC5F20035919F /* OrgsLogoCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF5DC0729DCC5F20035919F /* OrgsLogoCache.swift */; };
+		3AF5DC0929DCC5F20035919F /* OrgsLogoCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF5DC0729DCC5F20035919F /* OrgsLogoCache.swift */; };
+		3AF5DC0A29DCC5F20035919F /* OrgsLogoCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF5DC0729DCC5F20035919F /* OrgsLogoCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,8 @@
 		3AF5DBF229DB6C180035919F /* GithubFetchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubFetchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AF5DBF629DB6C180035919F /* GithubFetchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubFetchUITests.swift; sourceTree = "<group>"; };
 		3AF5DBF829DB6C180035919F /* GithubFetchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubFetchUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3AF5DC0529DB73410035919F /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
+		3AF5DC0729DCC5F20035919F /* OrgsLogoCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrgsLogoCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,8 @@
 				3AF5DBDE29DB6C180035919F /* Assets.xcassets */,
 				3AF5DBE029DB6C180035919F /* LaunchScreen.storyboard */,
 				3AF5DBE329DB6C180035919F /* Info.plist */,
+				3AF5DC0529DB73410035919F /* DataFetcher.swift */,
+				3AF5DC0729DCC5F20035919F /* OrgsLogoCache.swift */,
 			);
 			path = GithubFetch;
 			sourceTree = "<group>";
@@ -261,6 +269,8 @@
 				3AF5DBDA29DB6C170035919F /* ViewController.swift in Sources */,
 				3AF5DBD629DB6C170035919F /* AppDelegate.swift in Sources */,
 				3AF5DBD829DB6C170035919F /* SceneDelegate.swift in Sources */,
+				3AF5DC0829DCC5F20035919F /* OrgsLogoCache.swift in Sources */,
+				3AF5DC0629DB73410035919F /* DataFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AF5DBED29DB6C180035919F /* GithubFetchTests.swift in Sources */,
+				3AF5DC0929DCC5F20035919F /* OrgsLogoCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +289,7 @@
 			files = (
 				3AF5DBF929DB6C180035919F /* GithubFetchUITestsLaunchTests.swift in Sources */,
 				3AF5DBF729DB6C180035919F /* GithubFetchUITests.swift in Sources */,
+				3AF5DC0A29DCC5F20035919F /* OrgsLogoCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
