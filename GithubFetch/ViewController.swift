@@ -51,7 +51,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             fatalError("Cannot get cell with id \(kOrgsCellId)")
         }
         let org = organizations[indexPath.row]
-        let orgDetail = DataFetcher.shared.persistedDetails(orgLogin: org.login)
+        let orgDetail = DataStore.persistedDetails(orgLogin: org.login)
+        
         cell.textLabel?.text = orgDetail?.name ?? org.login
         cell.detailTextLabel?.text = org.description
         cell.imageView?.image = OrgsLogoCache.shared.cachedLogoForOrg(org: org)
@@ -62,7 +63,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let org = organizations[indexPath.row]
-        if let homepageURL = DataFetcher.shared.persistedDetails(orgLogin: org.login)?.htmlUrl {
+        if let homepageURL = DataStore.persistedDetails(orgLogin: org.login)?.htmlUrl {
             UIApplication.shared.open(URL(string: homepageURL)!)
         }
     }
@@ -93,7 +94,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         organizationsView.delegate = self
         organizationsView.frame = view.bounds
         
-        observer = DataFetcher.shared.fetchOrgs()
+        observer = DataController.shared.fetchOrgs()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
             switch completion {
@@ -110,7 +111,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             OrgsLogoCache.shared.updateAndStartFetchingMissingLogos(orgs: organizations)
         })
         
-        
+
         NotificationCenter.default
                           .addObserver(self,
                                        selector: #selector(orgInfoUpdated),

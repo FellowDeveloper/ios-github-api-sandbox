@@ -8,11 +8,12 @@
 import Foundation
 import UIKit
 
+
+
+
 class OrgsLogoCache {
     
     static let shared = OrgsLogoCache()
-    
-    
     
     private var cachedPics: [String:UIImage] = [:]
     
@@ -67,26 +68,14 @@ class OrgsLogoCache {
         }
         let request = URLRequest(url: url)
         
-        URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
-            
-            guard let strongSelf = self else { return }
-                
-            if let error = error {
-                // TODO: ERR!
-                return
-            }
-            
-            guard let data = data else {
-                // TODO: ERR!
-                return
-            }
-            
-            if let image = UIImage(data: data) {
-                strongSelf.cachedPics[strongSelf.logoFiliName(org)] = image
-                try! data.write(to: strongSelf.cachedLogoFileUrl(org))
+        URLRequestHandler.handle(request) { [weak self] data, response, error in
+            guard let self = self else { return }
+            if let data = data, let image = UIImage(data: data) {
+                self.cachedPics[self.logoFiliName(org)] = image
+                try! data.write(to: self.cachedLogoFileUrl(org))
                 NotificationCenter.default
                     .post(name:NSNotification.Name("org-details-updated"), object: nil, userInfo: nil)
             }
-        }.resume()
+        }
     }
 }
